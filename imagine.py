@@ -19,5 +19,15 @@ weight = 90
 Output:
 Kamu boleh menyeberang jembatan
 """
-weight = 90
-# lanjutkan code dibawah ini
+# Input berat badan dari pengguna
+weight = int(input("Weight: "))  # Pastikan untuk mengonversi input ke integer
+
+# Tentukan batas minimum dan maksimum berat yang diizinkan
+min_weight = 80
+max_weight = 100
+
+# Periksa apakah berat memenuhi syarat
+if min_weight <= weight <= max_weight:
+    print("Kamu boleh menyeberang jembatan")
+else:
+    print("Kamu tidak boleh menyeberang jembatan")

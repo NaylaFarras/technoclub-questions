@@ -35,7 +35,12 @@ for i in range(jumlah_penumpang):
     
     print()
     
-    # lanjutkan code dibawah ini
+    penumpang_dict = {
+        'nama': nama,
+        'umur': umur,
+        'asal planet': asal_planet
+    }
     
-print(penumpang)
+    penumpang.append(penumpang_dict)
 
+print(penumpang)

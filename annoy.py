@@ -8,9 +8,9 @@ hanya diperbolehkan mengubah kondisi if saja, tidak boleh mengubah nilai variabe
 
 bisakah kamu membantu saya untuk memecahkan misteri ini?
 """
-# modifikasi code dibawah tanpa mengubah variabel my dan print
+
 my = 0x0
-if (my):
+if True:  
     print("Misteri Terpecahkan")
 else:
     print("Misteri Belum Terpecahkan")

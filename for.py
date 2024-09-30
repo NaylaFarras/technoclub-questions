@@ -11,4 +11,5 @@ while (True):
     print(i)
     
     i += 1
-    # lanjutkan code dibawah ini
+    if i >= 100:
+        break
