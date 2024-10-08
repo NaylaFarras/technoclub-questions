@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konversi Suhu</title>
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+        font-family: Arial, sans-serif;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #0d1117;
+          color: white;
+        }
+
+        textarea,
+        select {
+          background-color: #1a1a1a;
+          color: white;
+          border: 1px solid #333;
+        }
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .box {
+        flex: 1;
+        min-width: 280px;
+      }
+
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .button-container {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .output-container {
+        margin-top: 30px;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .button-container {
+          flex-direction: column;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+
+  <body>
+    <article class="markdown-body">
+      <h1>Kalkulator Konversi Suhu</h1>
+      <p style="font-size: 17px">
+        Masukkan suhu derajat Celcius (°C) ke kotak dibawah, lalu klik tombol
+        Konversi untuk mendapatkan hasil konversi dalam bentuk Fahrenheit (°F)
+      </p>
+
+      <div class="container">
+        <div class="row">
+          <div class="box">
+            <label for="input-suhu">Celcius (°C):</label>
+            <br />
+            <textarea type="text" id="input-suhu"></textarea>
+          </div>
+          <div class="box">
+            <label for="jenis-konversi">Pilih Jenis Konversi:</label>
+            <br />
+            <select id="jenis-konversi">
+              <option value="celsius-to-fahrenheit">
+                Celsius ke Fahrenheit
+              </option>
+              <option value="fahrenheit-to-celsius">
+                Fahrenheit ke Celsius
+              </option>
+              <option value="celsius-to-kelvin">Celsius ke Kelvin</option>
+              <option value="kelvin-to-celsius">Kelvin ke Celsius</option>
+              <option value="fahrenheit-to-kelvin">Fahrenheit ke Kelvin</option>
+              <option value="kelvin-to-fahrenheit">Kelvin ke Fahrenheit</option>
+            </select>
+            <br /><br />
+            <div class="button-container">
+              <button onclick="konversi()">Konversi</button>
+              <button onclick="resetForm()">Reset</button>
+              <button onclick="reverseKonversi()">Reverse</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row output-container">
+          <div class="box">
+            <label for="output-suhu">Hasil Konversi:</label>
+            <br />
+            <textarea type="text" id="output-suhu" readonly></textarea>
+          </div>
+          <div class="box">
+            <label for="kalkulasi">Cara kalkulasi:</label>
+            <br />
+            <textarea id="kalkulasi" readonly></textarea>
+          </div>
+        </div>
+      </div>
+
+      <h2>Cara Konversi</h2>
+      <div id="descRumus"></div>
+      <br />
+      <div id="rumus"></div>
+
+      <script src="js/script.js"></script>
+    </article>
+  </body>
+</html>
